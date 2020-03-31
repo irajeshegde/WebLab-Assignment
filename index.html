@@ -1,0 +1,465 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebLab Assignment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>WebLab Assignment</h1>
+        <h5>Submitted by Rajesh Hegde - 1NT17IS134</h5>
+        <div>
+            <h3>Problem 1</h3>
+            <p>Write a function that takes in an array of integers and returns the integers that are
+                either palindromes or almost-palindromes. An almost-palindrome is any integer that can be rearranged to
+                form a palindrome.
+                For example, the numbers 677 and 338 are both almost-palindromes, since they can be rearranged to
+                form 767 and 383, respectively.
+                <br>
+                <b>Examples</b>
+                <br>
+                palindromeSieve([443, 12, 639, 121, 3232]) ➞ [443, 121, 3232]
+                // Since 443 => 434; 121 is a palindrome; 3232 => 2332 or 3223
+                <br>
+                palindromeSieve([5, 55, 6655, 8787]) ➞ [5, 55, 6655, 8787]
+                // Single-digit numbers are automatically palindromes.
+                <br>
+                palindromeSieve([897, 89, 23, 54, 6197, 53342]) ➞ []
+            </p>
+            Enter array of numbers: (ignore [] and use ,) <input id="problem1" type="text" class="form-control">
+            <br>
+            <button onclick="problem1()" class="btn btn-secondary">Check</button>
+            <br>
+            <br>
+            <h6 id="output1"></h6>
+            <br>
+        </div>
+        <hr>
+        <div>
+            <h3>Problem 2</h3>
+            <p>Create a function that takes an array and return the most frequently occuring element contained within
+                it.
+                <br>
+                <b>Examples</b>
+                <br>
+                findFrequent([3, 7, 3]) ➞ 3
+                <br>
+                findFrequent(["null", "hello", "true", "null"]) ➞ null
+                <br>
+                findFrequent(["false", "up", "down", "left", "right", "true", "false"]) ➞ false
+            </p>
+            Enter array: (ignore [] and use ,) <input id="problem2" type="text" class="form-control">
+            <br>
+            <button onclick="problem2()" class="btn btn-secondary">Check</button>
+            <br>
+            <br>
+            <h6 id="output2"></h6>
+            <br>
+        </div>
+        <hr>
+        <div>
+            <h3>Problem 3</h3>
+            <p>This robot roams around a 2D grid. It starts at (0, 0) facing North. After each time it moves, the robot
+                rotates 90 degrees clockwise. Given the amount the robot has moved each time, you have to calculate the
+                robot's final position.
+                To illustrate, if the robot is given the movements 20, 30, 10, 40 then it will move:
+                <br>
+                <li>
+                    20 steps North, now at (0, 20)
+                </li>
+                <li>30 steps East, now at (30, 20)</li>
+                <li>10 steps South. now at (30, 10)</li>
+                <li>40 steps West, now at (-10, 10)</li>
+                <li>...and will end up at coordinates (-10, 10).</li>
+
+                <br>
+                <b>Examples</b>
+                <br>
+                trackRobot(20, 30, 10, 40) ➞ [-10, 10]
+                <br>
+                trackRobot() ➞ [0, 0]
+                // No movement means the robot stays at (0, 0).
+                <br>
+                trackRobot(-10, 20, 10) ➞ [20, -20]
+                // The amount to move can be negative.
+            </p>
+            Enter directions in the order North, East, South, West: (ignore [] and use ,) <input id="problem3"
+                type="text" class="form-control">
+            <br>
+            <button onclick="problem3()" class="btn btn-secondary">Check</button>
+            <br>
+            <br>
+            <h6 id="output3"></h6>
+            <br>
+        </div>
+        <hr>
+        <div>
+            <h3>Problem 4</h3>
+            <p>An input string can be completed if additional letters can be added and no letters need to be taken away
+                to match the word. Furthermore, the order of the letters in the input string must be the same as the
+                order of letters in the final word.
+                <br>
+                Create a function that, given an input string, determines if the word can be completed.
+
+                <br>
+                <b>Examples</b>
+                <br>
+                canComplete("butl", "beautiful") ➞ true
+                // We can add "ea" between "b" and "u", and "ifu" between "t" and "l".
+                <br>
+                canComplete("butlz", "beautiful") ➞ false
+                // "z" does not exist in the word beautiful.
+                <br>
+                canComplete("tulb", "beautiful") ➞ false
+                // Although "t", "u", "l" and "b" all exist in "beautiful", they are incorrectly ordered.
+                <br>
+                canComplete("bbutl", "beautiful") ➞ false
+                // Too many "b"s, beautiful has only 1.
+            </p>
+            <br>
+            Enter your input: (ignore [] and use ,) <input id="problem4" type="text" class="form-control">
+            <br>
+            <button onclick="problem4()" class="btn btn-secondary">Check</button>
+            <br>
+            <br>
+            <h6 id="output4"></h6>
+        </div>
+        <hr>
+        <div>
+            <h3>Problem 5</h3>
+            <p>You are playing a game of JavaScript & Jackalopes with your friends and need to roll dice as part of the
+                game. None of you actually own dice, but you do have a computer handy!
+                <br>
+                You'll be given a string representing the number of dice to roll, how many faces each die has, and a
+                "modifier" to apply to the final result after adding up all the dice. For example, rolling a single
+                six-sided die with no modifier might be represented by the string "1d6" — one die with six sides and
+                values ranging from 1 through 6. If you wanted to add 2 to the result of rolling the same die, you might
+                represent that as "1d6+2".
+                <br>
+                Create a function that takes a string representing a set of dice to be rolled as an argument, and
+                returns an array of two numbers representing the minimum and maximum possible values that could be
+                achieved.
+                <br>
+                <b>Examples</b>
+                <br>
+                diceRange("1d6") ➞ [1, 6]
+                // If a modifier is not given, assume that nothing will be
+                added to/subtracted from the results.
+                <br>
+                diceRange("1d6+2") ➞ [3, 8]
+                <br>
+                diceRange("d6") ➞ [1, 6]
+                // If a number of dice is not provided, assume only one is
+                being rolled.
+                <br>
+                diceRange("d6-2") ➞ [-1, 4]
+                // If a modifier is negative, the resulting values may be
+                negative as well.
+                <br>
+                diceRange("2d6") ➞ [2, 12]
+                <br>
+                diceRange("2d6-1") ➞ [1, 11]
+                // The modifier should be added to/subtracted from the
+                final result after rolling all the dice and adding up their
+                results, not applied to each roll!
+                <br>
+                diceRange("0d6+1") ➞ [1, 1]
+                // If you roll no dice, the result will only be whatever the
+                modifier's value is with no randomness.
+            </p>
+            Enter your input: <input id="problem5" type="text" class="form-control">
+            <br>
+            <button onclick="problem5()" class="btn btn-secondary">Check</button>
+            <br>
+            <br>
+            <h6 id="output5"></h6>
+        </div>
+        <hr>
+        <div>
+            <h3>Problem 6</h3>
+            <p>Write a sorting function that takes in an array of names and sorts them by last name either
+                alphabetically (ASC) or reverse-alphabetically (DESC).
+            </p>
+            Enter names: (ignore [] and use ,) <input id="problem6" type="text" class="form-control">
+            <br>
+            <button onclick="problem6()" class="btn btn-secondary">Check</button>
+            <br>
+            <br>
+            <h6 id="output6"></h6>
+            <br>
+        </div>
+        <div>
+            <h3>Problem 7</h3>
+            <p>
+                Email iD verification using regular expression. Need to accept valid Email ID.
+            </p>
+            Enter email ID: <input id="problem7" type="text" class="form-control">
+            <br>
+            <button onclick="problem7()" class="btn btn-secondary">Check</button>
+            <br>
+            <br>
+            <h6 id="output7"></h6>
+            <br>
+        </div>
+        <hr>
+        <div>
+            <h3>Problem 8</h3>
+            <p>Create a function that takes in an array of grass heights and a variable sequence of lawn mower cuts and
+                outputs the array of successive grass heights.
+                <br>
+                If after a cut, any single element in the array reaches zero or negative, return "Done" instead of the
+                array of new heights.
+                <br>
+                <b>Examples</b>
+                <br>
+                cuttingGrass([5, 6, 7, 5], 1, 2, 1)
+                <br>
+                ➞ [[4, 5, 6, 4], [2, 3, 4, 2], [1, 2, 3, 1]]
+                <br>
+                cuttingGrass([4, 4, 4, 4], 1, 1, 1, 1)
+                <br>
+                ➞ [[3, 3, 3, 3], [2, 2, 2, 2], [1, 1, 1, 1], "Done"]
+                <br>
+                cuttingGrass([8, 9, 9, 8, 8], 2, 3, 2, 1)
+                ➞ [[6, 7, 7, 6, 6], [3, 4, 4, 3, 3], [1, 2, 2, 1, 1], "Done"]
+                <br>
+                cuttingGrass([1, 0, 1, 1], 1, 1, 1) ➞ ["Done", "Done", "Done"]
+                <br>
+            </p>
+            Enter array: (ignore [] and use ,) <input id="problem8a" type="text" class="form-control">
+            <br>
+            Enter cuts: (ignore [] and use ,) <input id="problem8b" type="text" class="form-control">
+            <br>
+            <button onclick="problem8()" class="btn btn-secondary">Check</button>
+            <br>
+            <br>
+            <h6 id="output8"></h6>
+            <br>
+        </div>
+    </div>
+    <script>
+        // Problem1
+        function problem1() {
+            var output = []
+            var inputArray = document.getElementById("problem1").value.split(',')
+            for (var i = 0; i < inputArray.length; i++) {
+                var a, b, temp = 0;
+                no = Number(inputArray[i])
+                b = no;
+                while (no > 0) {
+                    a = no % 10;
+                    no = parseInt(no / 10);
+                    temp = temp * 10 + a;
+                }
+                if (temp == b) {
+                    output.push(b)
+
+                } else {
+                    function permut(string) {
+                        if (string.length < 2) return string;
+
+                        var permutations = []; // This array will hold our permutations
+                        for (var i = 0; i < string.length; i++) {
+                            var char = string[i];
+
+                            if (string.indexOf(char) != i) // if char was used already
+                                continue; // skip it this time
+
+                            var remainingString = string.slice(0, i) + string.slice(i + 1, string
+                                .length); //Note: you can concat Strings via '+' in JS
+
+                            for (var subPermutation of permut(remainingString))
+                                permutations.push(char + subPermutation)
+                        }
+                        return permutations;
+                    }
+
+                    var allArray = permut(inputArray[i])
+                    var flag = 0;
+                    for (var j = 0; j < allArray.length; j++) {
+                        var a, b, temp = 0;
+                        no = Number(allArray[j])
+                        b = no;
+                        while (no > 0) {
+                            a = no % 10;
+                            no = parseInt(no / 10);
+                            temp = temp * 10 + a;
+                        }
+                        if (temp == b) {
+                            flag = 1;
+                        }
+                    }
+                    if (flag) {
+                        output.push(inputArray[i])
+                    }
+                }
+
+            }
+
+            document.getElementById("output1").innerHTML = output.length > 0 ? output : "[]"
+        }
+
+        // Problem2
+        function problem2() {
+            var array = document.getElementById("problem2").value.split(',')
+            if (array.length == 0)
+                return null;
+            var modeMap = {};
+            var maxEl = array[0],
+                maxCount = 1;
+            for (var i = 0; i < array.length; i++) {
+                var el = array[i];
+                if (modeMap[el] == null)
+                    modeMap[el] = 1;
+                else
+                    modeMap[el]++;
+                if (modeMap[el] > maxCount) {
+                    maxEl = el;
+                    maxCount = modeMap[el];
+                }
+            }
+            document.getElementById("output2").innerHTML = maxEl
+        }
+        // Problem3
+        function problem3() {
+            var directions = document.getElementById("problem3").value.split(',')
+            console.log(directions)
+            var x = Number(directions[1]) - Number(directions[3])
+            var y = Number(directions[0]) - Number(directions[2])
+
+            document.getElementById("output3").innerHTML = `[${x},${y}]`
+        }
+        // Problem4
+        function problem4() {
+            Array.prototype.remove = function () {
+                var what, a = arguments,
+                    L = a.length,
+                    ax;
+                while (L && this.length) {
+                    what = a[--L];
+                    while ((ax = this.indexOf(what)) !== -1) {
+                        this.splice(ax, 1);
+                    }
+                }
+                return this;
+            };
+            var input = document.getElementById("problem4").value.split(',')
+            var incompleteWord = input[0].split('')
+            var completeWord = input[1].split('')
+            var indexTrack = 0
+            for (var i = 0; i < completeWord.length; i++) {
+                var index = incompleteWord.indexOf(completeWord[i])
+                if (index > -1) {
+                    if (index > 0) {
+                        indexTrack = 1;
+                    }
+                    incompleteWord.splice(index, 1)
+                }
+            }
+
+            if (incompleteWord.length > 0 || indexTrack == 1) {
+                document.getElementById("output4").innerHTML = 'false'
+            } else {
+                document.getElementById("output4").innerHTML = 'true'
+            }
+        }
+        // Problem5
+        function problem5() {
+            var diceInput = document.getElementById("problem5").value.split('d')
+            var initialVal, finalVal, finalNum
+            var modVal = diceInput[1].slice(1, 3)
+            if (diceInput[0] == "") {
+                initialVal = eval(1 + modVal)
+            } else {
+                initialVal = eval(diceInput[0] + modVal)
+            }
+
+            if (diceInput[0] > 1) {
+                finalVal = eval(diceInput[0] * 6 + modVal)
+            } else {
+                if (diceInput[0] == 0) {
+                    finalVal = eval(diceInput[0] + modVal)
+                } else {
+                    finalVal = eval(diceInput[1])
+                }
+            }
+
+            document.getElementById("output5").innerHTML = '[' + initialVal + ',' + finalVal + ']'
+        }
+        // Problem6 
+        function problem6() {
+            var names = document.getElementById("problem6").value.split(',')
+
+            function compare(a, b) {
+                var splitA = a.split(" ");
+                var splitB = b.split(" ");
+                var lastA = splitA[splitA.length - 1];
+                var lastB = splitB[splitB.length - 1];
+
+                if (lastA < lastB) return -1;
+                if (lastA > lastB) return 1;
+                return 0;
+            }
+            var sorted = names.sort(compare);
+            document.getElementById("output6").innerHTML = sorted;
+        }
+
+        // Problem7 
+        function problem7() {
+            var email = document.getElementById("problem7").value;
+            var re =
+                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (re.test(String(email).toLowerCase()) == true) {
+                document.getElementById("output7").innerHTML = `'${email}' is a valid email 👍🏻`;
+            } else {
+                document.getElementById("output7").innerHTML = `'${email}' is an invalid email 👎🏻`;
+            }
+        }
+
+        // Problem 8
+        function problem8() {
+            var inputArray = document.getElementById("problem8a").value.split(',');
+            var cuts = document.getElementById("problem8b").value.split(',');
+            var outputArray = new Array;
+            for (var i = 0; i < cuts.length; i++) {
+                var intermediateArray = new Array;
+                var flag = 0;
+                for (var j = 0; j < inputArray.length; j++) {
+                    var intermediate = (Number(inputArray[j]) - Number(cuts[i]))
+                    if (intermediate == 0) {
+                        flag = 1
+                    } else {
+                        intermediateArray.push(intermediate)
+                    }
+                }
+                if (flag) {
+                    outputArray.push("Done")
+                } else {
+                    outputArray.push(intermediateArray);
+                    inputArray = intermediateArray
+                    intermediateArray = []
+                }
+            }
+            document.getElementById("output8").innerHTML = "Check console for output 🧐"
+            console.log(`Output of Problem8`);
+            console.log(outputArray);
+
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
